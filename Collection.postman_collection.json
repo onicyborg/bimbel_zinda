@@ -1,0 +1,1003 @@
+{
+	"info": {
+		"_postman_id": "09ae0ee2-ef09-4ead-97b9-67fa298dc2c0",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28054171"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"kaliorikalibagorbanyumas@gmail.com\",\r\n    \"password\" : \"6januari2000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 3|NzV8CzyCh5VkOro9UyEmHrMf6mXDK6h1QjP1r7vo40cdff22",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Siswa",
+			"item": [
+				{
+					"name": "GetAllSiswa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-all-siswa",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-all-siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSiswaById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"tempat_lahir\": \"Bali\",\r\n    \"tanggal_lahir\": \"2000-01-01\",\r\n    \"jenis_kelamin\": \"Pria\",\r\n    \"alamat\": \"Jl. Kebon Jeruk No. 12, Jakarta\",\r\n    \"nama_sekolah\": \"SMA Negeri 1 Jakarta\",\r\n    \"jenjang\": \"SMA\",\r\n    \"kelas\": \"12\",\r\n    \"nama_orangtua\": \"Jane Doe\",\r\n    \"no_handphone\": \"+628123456789\",\r\n    \"kekurangan\": \"Kesulitan dalam Matematika\",\r\n    \"harapan_siswa\": \"Ingin menjadi insinyur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-siswa-by-id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-siswa-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddSiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"tempat_lahir\": \"Jakarta\",\r\n    \"tanggal_lahir\": \"2000-01-01\",\r\n    \"jenis_kelamin\": \"Pria\",\r\n    \"alamat\": \"Jl. Kebon Jeruk No. 12, Jakarta\",\r\n    \"nama_sekolah\": \"SMA Negeri 1 Jakarta\",\r\n    \"jenjang\": \"SMA\",\r\n    \"kelas\": \"12\",\r\n    \"nama_orangtua\": \"Jane Doe\",\r\n    \"no_handphone\": \"+628123456789\",\r\n    \"kekurangan\": \"Kesulitan dalam Matematika\",\r\n    \"harapan_siswa\": \"Ingin menjadi insinyur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-siswa",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"tempat_lahir\": \"Bali\",\r\n    \"tanggal_lahir\": \"2000-01-01\",\r\n    \"jenis_kelamin\": \"Pria\",\r\n    \"alamat\": \"Jl. Kebon Jeruk No. 12, Jakarta\",\r\n    \"nama_sekolah\": \"SMA Negeri 1 Jakarta\",\r\n    \"jenjang\": \"SMA\",\r\n    \"kelas\": \"12\",\r\n    \"nama_orangtua\": \"Jane Doe\",\r\n    \"no_handphone\": \"+628123456789\",\r\n    \"kekurangan\": \"Kesulitan dalam Matematika\",\r\n    \"harapan_siswa\": \"Ingin menjadi insinyur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-siswa/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-siswa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/delete-siswa/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-siswa",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Tentor",
+			"item": [
+				{
+					"name": "GetAllTentor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-all-tentor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-all-tentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTentor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"tempat_lahir\": \"Jakarta\",\r\n    \"tanggal_lahir\": \"2000-01-01\",\r\n    \"jenis_kelamin\": \"Pria\",\r\n    \"alamat\": \"Jl. Kebon Jeruk No. 12, Jakarta\",\r\n    \"asal_perguruan_tinggi\": \"Universitas Indonesia\",\r\n    \"jurusan\": \"Teknik Informatika\",\r\n    \"pengalaman\": \"Magang di perusahaan X selama 6 bulan.\",\r\n    \"no_handphone\": \"+628123456789\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"keterangan\": \"Tidak ada keterangan tambahan\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-tentor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-tentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTentorById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-tentor-by-id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-tentor-by-id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTentor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"tempat_lahir\": \"Bali\",\r\n    \"tanggal_lahir\": \"2000-01-01\",\r\n    \"jenis_kelamin\": \"Pria\",\r\n    \"alamat\": \"Jl. Kebon Jeruk No. 12, Jakarta\",\r\n    \"asal_perguruan_tinggi\": \"Universitas Indonesia\",\r\n    \"jurusan\": \"Teknik Informatika\",\r\n    \"pengalaman\": \"Magang di perusahaan X selama 6 bulan.\",\r\n    \"no_handphone\": \"+628123456789\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"keterangan\": \"Tidak ada keterangan tambahan\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-tentor/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-tentor",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTentor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/delete-tentor/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-tentor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Mata Pelajaran",
+			"item": [
+				{
+					"name": "GetAllMataPelajaran",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-all-mata-pelajaran",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-all-mata-pelajaran"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMataPelajaranById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-mata-pelajaran-by-id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-mata-pelajaran-by-id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMataPelajaran",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_mapel\" : \"Bahasa Indonesia\",\r\n    \"jenjang\" : \"SMA\",\r\n    \"kelas\" : \"12\",\r\n    \"keterangan\" : \"Mata Pelajaran Bahasa Inggris yang di gurui langsung sama sepuh indo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-mata-pelajaran",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-mata-pelajaran"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMataPelajaran",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_mapel\" : \"Bahasa Indonesia\",\r\n    \"jenjang\" : \"SMA\",\r\n    \"kelas\" : \"11\",\r\n    \"keterangan\" : \"Mata Pelajaran Bahasa Inggris yang di gurui langsung sama sepuh indo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-mata-pelajaran/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-mata-pelajaran",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/delete-mata-pelajaran/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-mata-pelajaran",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Jadwal",
+			"item": [
+				{
+					"name": "GetAllJadwal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-all-jadwal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-all-jadwal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateJadwal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 6|KCbuqijY4M3COs8dPCfx57y3vXcKqY4bUxqBrjzRdcf88db9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hari\": \"Senin\",\r\n    \"jam_mulai\": \"08:00\",\r\n    \"jam_selesai\": \"10:00\",\r\n    \"keterangan\": \"Pembelajaran Bahasa Inggris\",\r\n    \"siswa_id\": 4,\r\n    \"tentor_id\": 4,\r\n    \"mata_pelajaran_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-jadwal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-jadwal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetJadwalById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 7|tCCAw9PKmf3aPX2iCbsQ8onZsjLcsxELKzQ5e1QS42575075",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-jadwal-by-id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-jadwal-by-id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateJadwal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 7|tCCAw9PKmf3aPX2iCbsQ8onZsjLcsxELKzQ5e1QS42575075",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hari\": \"Senin\",\r\n    \"jam_mulai\": \"08:00\",\r\n    \"jam_selesai\": \"10:00\",\r\n    \"keterangan\": \"Pembelajaran Bahasa Inggris\",\r\n    \"siswa_id\": 3,\r\n    \"tentor_id\": 3,\r\n    \"mata_pelajaran_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-jadwal/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-jadwal",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteJadwal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 7|tCCAw9PKmf3aPX2iCbsQ8onZsjLcsxELKzQ5e1QS42575075",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/delete-jadwal/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-jadwal",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
