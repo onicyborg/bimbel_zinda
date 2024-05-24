@@ -77,8 +77,8 @@ class JadwalController extends Controller
     {
         $request->validate([
             'hari' => 'required|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu,Minggu',
-            'jam_mulai' => 'required|date_format:H:i', // Format waktu HH:MM
-            'jam_selesai' => 'required|date_format:H:i|after:jam_mulai', // Format waktu HH:MM dan setelah jam_mulai
+            'jam_mulai' => 'required', // Format waktu HH:MM
+            'jam_selesai' => 'required|after:jam_mulai', // Format waktu HH:MM dan setelah jam_mulai
             'keterangan' => 'nullable|string', // Opsional, jika ada harus berupa string
             'siswa_id' => 'required|exists:siswa,id', // Harus ada di tabel siswas
             'tentor_id' => 'required|exists:tentor,id', // Harus ada di tabel tentors
