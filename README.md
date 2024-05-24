@@ -10,7 +10,7 @@ git clone https://github.com/onicyborg/bimbel_zinda.git
 - masuk ke folder project dengan mengetik perintah di bawah ini pada terminal
 
 ```bash
-cd bimbel-zinda
+cd bimbel_zinda
 ```
 
 - lalu ketik perintah di bawah ini
