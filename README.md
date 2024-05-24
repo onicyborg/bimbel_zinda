@@ -1,4 +1,4 @@
-## Tutor Instalasi Web
+## Tutor Instalasi Web (Backend)
 
 - Buka direktori tempat anda ingin menyimpan project, lalu buka git bash
 - ketik perintah di bawah
@@ -53,3 +53,6 @@ php artisan serve
 ```
 
 - jika ingin mencoba API lewat postman bisa meng eksport collection di folder project ini yang bernama "Collection.postman_collection.json"
+
+
+## Tutor Instalasi Web (Frontend)
