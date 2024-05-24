@@ -53,6 +53,3 @@ php artisan serve
 ```
 
 - jika ingin mencoba API lewat postman bisa meng eksport collection di folder project ini yang bernama "Collection.postman_collection.json"
-
-
-## Tutor Instalasi Web (Frontend)
