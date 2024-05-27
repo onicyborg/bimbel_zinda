@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 import HeroImage from '../assets/img/buku.png';
-import { kelasTerbaru } from '../data/index';
-import { testimonial } from '../data/index';
+import { kelasTerbaru, dataSwiper } from '../data/index';
 import FaqComponent from '../component/FaqComponent';
 
 const HomePages = () => {
@@ -13,8 +20,8 @@ const HomePages = () => {
     <div className="homepage">
       <header className="w-100 min-vh-50 d-flex align-items-center overflow-hidden">
         <Container>
-          <Row className="header-box d-flex align-items-center pt-lg-3 ">
-            <Col lg="1"></Col> {/* Kolom kosong untuk menggeser isi */}
+          <Row className="header-box d-flex align-items-center pt-lg-5">
+            <Col lg="1"></Col>
             <Col lg="5">
               <h1 className="mb-5 animate__animated animate__fadeInUp animate__delay-1s">
                 Bimbingan Belajar <br />{' '}
@@ -23,7 +30,6 @@ const HomePages = () => {
               </h1>
               <ButtonGroup />
             </Col>
-            {/* <Col ></Col> */}
             <Col lg="5" className="pt-lg-0 pt-5 pl-4 mx-4">
               <img
                 src={HeroImage}
@@ -48,8 +54,7 @@ const ButtonGroup = () => {
     phoneNumber: '62878-3962-2557',
   });
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
+  const handleSubmit = () => {
     console.log('Informasi Kontak:', contactInfo);
 
     window.location.href = `https://wa.me/${contactInfo.phoneNumber.replace(
@@ -66,7 +71,6 @@ const ButtonGroup = () => {
       >
         Daftar Sekarang
       </Button>
-      {/* <Button className="btn btn-primary btn-lg btn-block rounded-1 mb-xs-0 mb-2 animate__animated animate__fadeInUp animate__delay-1s" onClick={() => navigate("/Contact")}>Hubungi kami</Button> */}
     </div>
   );
 };
@@ -78,7 +82,7 @@ const KelasSection = () => {
     <div className="kelas w-100 min-vh-100">
       <Container className="mb-5">
         <Col>
-          <h1 className="text-center fw-bold mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+          <h1 className="py-5 text-center fw-bold mb-5 animate__animated animate__fadeInUp animate__delay-1s">
             Mata Pelajaran
           </h1>
         </Col>
@@ -136,10 +140,65 @@ const TestimonialComponent = () => {
   return (
     <div className="footer py-5">
       <Container>
-        <Row className="d-flex justify-content-between align-items-center">
-          <Col lg="6">
-            <div className="card p-3">
-              <h3 className="fw-bold">Bimbel Zinda</h3>
+      <Row className="d-flex justify-content-center mb-5">
+          <Col lg="6" className="text-center">
+            <h1 className="text-center fw-bold mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+              Yuk simak apa kata mereka?
+            </h1>
+          </Col>
+        </Row>
+        <Row>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              992: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 60,
+              },
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {dataSwiper.map((data) => {
+              return (
+                <SwiperSlide key={data.id} className="shadow-sm">
+                  <p className="desc">{data.desc}</p>
+                  <div className="people">
+                    <img
+                      src={data.image}
+                      alt=""
+                      className="testimonial-image"
+                    />
+                    <div>
+                      <h5 className="mb-1">{data.name}</h5>
+                      <p className="m-0 fw-bold">{data.skill}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Row>
+        <Row className="d-flex justify-content-between align-items-center mt-5">
+          <Col lg="6" className="mb-4 mb-lg-0">
+            <div className="card p-3 h-100">
+              <h3 className="fw-bold mt-3">Bimbel Zinda</h3>
               <a
                 href="https://www.google.com/maps?q=Blok+B-17+Jalan+Raya+Banyumas+-+Kalibagor+No+9+Dusun+IV+Kalibagor,+Kaliori,+Kec+Kalibagor,+Kab+Banyumas,+Prov+Jawa+Tengah"
                 target="_blank"
@@ -179,10 +238,12 @@ const TestimonialComponent = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.743008358157!2d109.298817682305!3d-7.493601067841365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655b6bd85d93d9%3A0x2bd4df3cf65283c2!2sJl.%20Raya%20Banyumas%20-%20Kalibagor%20No.9%20B-17%2C%20Dusun%20IV%20Kalibagor%2C%20Kaliori%2C%20Kec.%20Kalibagor%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah%2053191!5e0!3m2!1sid!2sid!4v1716565386614!5m2!1sid!2sid"
               width="450"
               height="280"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
             ></iframe>
           </Col>
         </Row>
-        <Row></Row>
       </Container>
     </div>
   );

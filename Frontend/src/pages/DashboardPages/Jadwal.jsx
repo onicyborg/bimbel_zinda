@@ -12,6 +12,12 @@ export const Jadwal = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [editData, setEditData] = useState({});
+  const [siswa_id, setSiswaId] = useState('');
+  const [tentor_id, setTentorId] = useState('');
+  const [mata_pelajaran_id, setMataPelajaranId] = useState('');
+  const [siswaData, setSiswaData] = useState([]);
+  const [tentorData, setTentorData] = useState([]);
+  const [mapelData, setMapelData] = useState([]);
   const itemsPerPage = 5;
   const [searchKeyword, setSearchKeyword] = useState('');
   const cookies = new Cookies();
@@ -21,7 +27,54 @@ export const Jadwal = () => {
       Authorization: `Bearer ${token}`,
     },
   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'http://127.0.0.1:8000/api/get-all-siswa',
+          config
+        );
+        const data = response.data.data || [];
+        setSiswaData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'http://127.0.0.1:8000/api/get-all-tentor',
+          config
+        );
+        const data = response.data.data || [];
+        setTentorData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'http://127.0.0.1:8000/api/get-all-mata-pelajaran',
+          config
+        );
+        const data = response.data.data || [];
+        setMapelData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -93,10 +146,22 @@ export const Jadwal = () => {
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
-    setEditData({
-      ...editData,
-      [name]: value,
-    });
+    if (
+      name === 'siswa_id' ||
+      name === 'tentor_id' ||
+      name === 'mata_pelajaran_id'
+    ) {
+      const selectedId = parseInt(value);
+      setEditData({
+        ...editData,
+        [name]: selectedId,
+      });
+    } else {
+      setEditData({
+        ...editData,
+        [name]: value,
+      });
+    }
   };
 
   const handleEditSubmit = async () => {
@@ -317,30 +382,48 @@ export const Jadwal = () => {
             </Form.Group>
             <Form.Group controlId="formSiswa">
               <Form.Label>Siswa Id</Form.Label>
-              <Form.Control
-                type="text"
-                name="siswa_id"
+              <Form.Select
                 value={editData.siswa_id || ''}
                 onChange={handleEditChange}
-              />
+                name="siswa_id"
+              >
+                <option value="">Select Siswa</option>
+                {siswaData.map((siswa) => (
+                  <option key={siswa.id} value={siswa.id}>
+                    {siswa.nama}{' '}
+                  </option>
+                ))}
+              </Form.Select>
             </Form.Group>
             <Form.Group controlId="formTentor">
               <Form.Label>Tentor Id</Form.Label>
-              <Form.Control
-                type="text"
-                name="tentor_id"
+              <Form.Select
                 value={editData.tentor_id || ''}
                 onChange={handleEditChange}
-              />
+                name="tentor_id"
+              >
+                <option value="">Select Tentor</option>
+                {tentorData.map((tentor) => (
+                  <option key={tentor.id} value={tentor.id}>
+                    {tentor.nama}{' '}
+                  </option>
+                ))}
+              </Form.Select>
             </Form.Group>
             <Form.Group controlId="formMapel">
               <Form.Label>Mata Pelajaran Id</Form.Label>
-              <Form.Control
-                type="text"
-                name="mata_pelajaran_id"
+              <Form.Select
                 value={editData.mata_pelajaran_id || ''}
                 onChange={handleEditChange}
-              />
+                name="mata_pelajaran_id"
+              >
+                <option value="">Select Mapel</option>
+                {mapelData.map((mata_pelajaran) => (
+                  <option key={mata_pelajaran.id} value={mata_pelajaran.id}>
+                    {mata_pelajaran.nama_mapel}{' '}
+                  </option>
+                ))}
+              </Form.Select>
             </Form.Group>
           </Form>
         </Modal.Body>

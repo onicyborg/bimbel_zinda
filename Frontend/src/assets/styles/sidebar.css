@@ -1,0 +1,10 @@
+.main-sidebar {
+  height: 100%;
+}
+
+body:not(.layout-fixed) .main-sidebar {
+  height: inherit;
+
+  position: absolute;
+  top: 0;
+}

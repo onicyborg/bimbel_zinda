@@ -26,7 +26,7 @@ const Classpages = () => {
           tentor : "",
           informasiLainnya: "",
         };
-      case "Pendidikan Agama Islam":
+      case "Mengaji":
         return {
           jadwal : "",
           tentor : "",

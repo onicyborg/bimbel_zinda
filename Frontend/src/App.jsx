@@ -8,6 +8,7 @@ import FooterComponent from './component/FooterComponent copy.jsx';
 import Homepages from './pages/Homepages';
 import Classpages from './pages/Classpages';
 import Faqpages from './pages/Faqpages';
+import SyaratKetenpage from './pages/SyaratKetenPage.jsx';
 import login from './pages/Login';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
@@ -78,6 +79,7 @@ function App() {
               <Route path="/" Component={Homepages} />
               <Route path="/Class" Component={Classpages} />
               <Route path="/Faq" Component={Faqpages} />
+              <Route path="/Syaratketen" Component={SyaratKetenpage} />
               <Route path="/login" Component={login} />
               <Route path="/Contact" Component={Contact} />
               <Route path="/Profile" Component={Profile} />

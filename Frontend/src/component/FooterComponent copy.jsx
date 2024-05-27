@@ -21,11 +21,6 @@ const FooterComponent = () => {
               FAQ
             </a>
           </Col>
-          <Col>
-            <a href="/Testimonial" className="">
-              Testimonial
-            </a>
-          </Col>
         </Row>
       </Container>
       <p className="text-center px-md-0 px-3">

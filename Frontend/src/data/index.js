@@ -49,8 +49,8 @@ export const navLinks = [
   },
   {
     id: 4,
-    path: 'testimonial',
-    text: 'Testimonial',
+    path: "syaratketen",
+    text: "Syarat & Ketentuan",
   },
 ];
 
@@ -58,7 +58,7 @@ export const semuaKelas = [
   {
     id: 1,
     image: KelasImage1,
-    title: 'Pendidikan Agama Islam',
+    title: 'Mengaji',
     desc: '',
     delay: '',
   },
@@ -124,7 +124,7 @@ export const kelasTerbaru = [
   {
     id: 1,
     image: KelasImage1,
-    title: 'Pendidikan Agama Islam',
+    title: 'Mengaji',
     delay: '200',
   },
   {
@@ -170,7 +170,7 @@ export const testimonial = [
   },
   {
     id: 2,
-    desc: 'Nilai Penilaian Tengah Semester (PTS) saya selalu hampir sempurna dan tidak pernah mengalami penurunan nilai.',
+    desc: 'Nilai Penilaian Tengah Semester (PTS) saya tidak pernah mengalami penurunan nilai.',
     image: People2,
     name: 'Nabilla',
     skill: 'Matematika & IPA',
@@ -184,45 +184,24 @@ export const testimonial = [
   },
   {
     id: 4,
-    desc: '',
+    desc: 'Alhamdulillah nilai Matematika meningkat menjadi 98 setelah les bersama Bimbel Zinda.',
     image: People1,
-    name: 'd',
-    skill: '',
+    name: 'Akmal',
+    skill: 'Matematika',
   },
   {
     id: 5,
-    desc: '',
+    desc: 'Alhamdulillah nilai Bahasa Inggris meningkat setelah les bersama Bimbel Zinda.',
     image: People2,
-    name: 'e',
-    skill: '',
+    name: 'Rizky',
+    skill: 'Bahasa Inggris',
   },
   {
     id: 6,
-    desc: '',
+    desc: 'Alhamdulillah mendapat peringkat 1 setelah les bersama Bimbel Zinda.',
     image: People3,
-    name: 'f',
-    skill: '',
-  },
-  {
-    id: 7,
-    desc: '',
-    image: People1,
-    name: 'g',
-    skill: '',
-  },
-  {
-    id: 8,
-    desc: '',
-    image: People2,
-    name: 'h',
-    skill: '',
-  },
-  {
-    id: 9,
-    desc: '',
-    image: People3,
-    name: 'i',
-    skill: '',
+    name: 'Fadillah',
+    skill: 'Bahasa Inggris',
   },
 ];
 
@@ -236,7 +215,7 @@ export const dataSwiper = [
   },
   {
     id: 2,
-    desc: 'Nilai Penilaian Tengah Semester (PTS) saya selalu hampir sempurna dan tidak pernah mengalami penurunan nilai.',
+    desc: 'Nilai Penilaian Tengah Semester (PTS) saya tidak pernah mengalami penurunan nilai.',
     image: People2,
     name: 'Nabilla',
     skill: 'Matematika & IPA',
@@ -250,24 +229,24 @@ export const dataSwiper = [
   },
   {
     id: 4,
-    desc: '',
+    desc: 'Alhamdulillah nilai Matematika meningkat menjadi 98 setelah les bersama Bimbel Zinda.',
     image: People1,
-    name: 'd',
-    skill: '',
+    name: 'Akmal',
+    skill: 'Matematika',
   },
   {
     id: 5,
-    desc: '',
+    desc: 'Alhamdulillah nilai Bahasa Inggris meningkat setelah les bersama Bimbel Zinda.',
     image: People2,
-    name: 'e',
-    skill: '',
+    name: 'Rizky',
+    skill: 'Bahasa Inggris',
   },
   {
     id: 6,
-    desc: '',
+    desc: 'Alhamdulillah mendapat peringkat 1 setelah les bersama Bimbel Zinda.',
     image: People3,
-    name: 'f',
-    skill: '',
+    name: 'Fadillah',
+    skill: 'Bahasa Inggris',
   },
 ];
 

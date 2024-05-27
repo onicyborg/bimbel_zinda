@@ -79,7 +79,7 @@ export const Sidebar = () => {
         </Modal.Footer>
       </Modal>
 
-      <aside className="main-sidebar sidebar-dark-primary elevation-4">
+      <aside className="main-sidebar sidebar-dark-primary ">
         <div className="sidebar">
           <div className="user-panel mt-3 pb-3 mb-3 d-flex">
             <a href="/dashboard/data_siswa/index" className="image">

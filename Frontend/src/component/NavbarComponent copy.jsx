@@ -29,8 +29,11 @@ function BasicExample() {
           <span className="ms-2">Bimbel Zinda</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto text-center">
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-center"
+        >
+          <Nav className="text-center">
             {updatedNavLinks.map((link) => (
               <NavLink
                 to={link.path}
