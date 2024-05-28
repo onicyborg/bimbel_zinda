@@ -15,7 +15,7 @@ const SyaratKetenComponent = () => {
           <Row className="p-3">
             <Col>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Lorem ipsum, sit amet consectetur adipisicing elit.
                 Molestias, doloribus ea voluptatem nesciunt distinctio est
                 possimus veritatis perspiciatis itaque eius, ut incidunt
                 reprehenderit, enim placeat ipsa maxime illo atque ab?
